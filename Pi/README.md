@@ -5,3 +5,5 @@ The following code records temperature readings from the DHT11 sensor and sends 
 ## Required Libraries
 - Adafruit.DHT
 - Paho-MQTT
+- json
+- time
