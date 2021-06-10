@@ -1,0 +1,47 @@
+//GOROBO.io IoT Trainer Board Code
+//Controlling the DC motor with Switch 1
+
+#include <Arduino.h>
+#include <MCP23017.h>
+#include <Wire.h>
+
+//Define the I2C Address of the MCP
+#define MCP23017_ADDR 0x20
+
+//Setup PWM 
+#define EN_PWM 32
+#define in1 34
+#define in2 1
+
+//Define an instance of the MCP23017 class
+MCP23017 mcp = MCP23017(MCP23017_ADDR);
+
+void setup() {
+ 
+  Serial.begin(9600);
+  //Join I2C bus
+  Wire.begin();
+  //Initialize MCP
+  mcp.init();
+  //Port A as Output (LEDS) || Port B as Input (Switched & Buttons)
+  mcp.portMode(MCP23017Port::A, 0);           //0 = Pin is configured as an output (LEDS).
+  mcp.portMode(MCP23017Port::B, 0B11111111);  //1 = Pin is configured as an input (switches).
+
+  pinMode(EN_PWM,OUTPUT);
+  pinMode(in1,OUTPUT);
+  pinMode(in2,OUTPUT);
+  ledcSetup(0,980,8);
+  ledcAttachPin(EN_PWM,0);
+}
+
+void loop() {
+  int sw0;
+  sw0 = mcp.digitalRead(8);
+  if (sw0 == 0){
+    ledcWrite(0,255);
+  }
+  else{
+    ledcWrite(0,0);
+  }
+  delay(500);
+}
