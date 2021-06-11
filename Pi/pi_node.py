@@ -28,10 +28,10 @@ client.on_message = on_message
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 
 # set username and password
-client.username_pw_set("RASPBERRY_PI", "Abcd1234")
+client.username_pw_set("______________", "______________")
 
 # connect to HiveMQ Cloud on port 8883
-client.connect("26d2ed39011f420086e3c922524409ac.s1.eu.hivemq.cloud", 8883)
+client.connect("______________", 8883)
 
 # subscribe to the topic "my/test/topic"
 client.subscribe("my/test/topic")
@@ -39,7 +39,7 @@ client.subscribe("my/test/topic")
 while(1):
     humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
     if humidity is not None and temperature is not None:
-        message = json.dumps({"temperature":temperature, "user": "RASPBERRY_PI"})
+        message = json.dumps({"temperature":temperature, "user": "______________"})
         client.publish("my/test/topic", message) # Publish message to MQTT broker
         print(message)
     else:
