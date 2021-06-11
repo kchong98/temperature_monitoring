@@ -4,5 +4,7 @@ The following code receives temperature data from the edge nodes and uploads it 
 
 ## Required Libraries
 - Paho-MQTT
+- InfluxDB-Client
+- ast
 - time
 - json
