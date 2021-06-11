@@ -22,10 +22,10 @@ client.on_message = on_message
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 
 # set username and password
-client.username_pw_set("DELL_LAPTOP", "Abcd1234")
+client.username_pw_set("______________", "______________")
 
 # connect to HiveMQ Cloud on port 8883
-client.connect("26d2ed39011f420086e3c922524409ac.s1.eu.hivemq.cloud", 8883)
+client.connect("______________", 8883)
 
 # subscribe to the topic "my/test/topic"
 client.subscribe("my/test/topic")
