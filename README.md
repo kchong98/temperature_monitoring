@@ -1,6 +1,6 @@
 # Temperature Monitoring
 ## Introduction
-The purpose of this project was to develop a temperature sensor network. This type of network can be used for several different applications ranging from smart home automation to monitoring the health of industrial machinery. 
+The purpose of this project was to develop a temperature sensor network. This type of network can be used for several different applications ranging from smart home automation to monitoring the health of industrial machinery.
 
 ## Materials
 ### Software
@@ -9,6 +9,7 @@ The purpose of this project was to develop a temperature sensor network. This ty
 - InflxuDB
 - Raspbian
 - ArduinoIDE
+- WiFi network
 
 ### Hardware
 - GoRobo.io board
