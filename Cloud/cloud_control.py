@@ -8,9 +8,9 @@ import ast
 #==================================================
 #Setting up InfluxDB Connection
 
-bucket = '4f71c92eed8d6ea3' 
-org = '2739d165137ff495'
-token = '2NK5ebiVWLj19rXIgIR3xcrUEIn0SdzTHp3IsDb5KtRH2vVfJzyRhN4y5imjDq5s_clV3UZDThhxvNN5jrksow=='
+bucket = '______________' 
+org = '______________'
+token = '______________'
 url = 'https://us-east-1-1.aws.cloud2.influxdata.com'
 
 client = influxdb_client.InfluxDBClient(
@@ -60,14 +60,14 @@ client.on_message = on_message
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 
 # set username and password
-client.username_pw_set("DELL_LAPTOP", "Abcd1234")
+client.username_pw_set("______________", "______________")
 
 # connect to HiveMQ Cloud on port 8883
-client.connect("26d2ed39011f420086e3c922524409ac.s1.eu.hivemq.cloud", 8883)
+client.connect("______________", 8883)
 
 # subscribe to the topic "my/test/topic"
 client.subscribe("my/test/topic")
-client.subscribe('my/DELL_LAPTOP/topic')
-client.subscribe('my/RASPBERRY_PI/topic')
+client.subscribe('my/______________/topic')
+client.subscribe('my/______________/topic')
 
 client.loop_forever()
